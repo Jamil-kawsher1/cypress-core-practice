@@ -1,0 +1,17 @@
+{
+  "dependencies": {
+    "cypress": "^12.17.4"
+  },
+  "devDependencies": {
+    "@faker-js/faker": "^8.0.2",
+    "@shelex/cypress-allure-plugin": "^2.40.0",
+    "cypress-xpath": "^2.0.1"
+  },
+  "scripts": {
+    "test": "npm run ui-test-allure",
+    "ui-test-allure": "cypress run --browser chrome --env allure=true",
+    "allure:report": "allure generate allure-results --clean -o allure-reports",
+    "clean:folders": "rm -R -f allure-report/* && rm -R -f allure-results/*",
+    "alluregenarate": "npx allure generate"
+  }
+}
