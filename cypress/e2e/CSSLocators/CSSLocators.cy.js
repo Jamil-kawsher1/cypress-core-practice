@@ -6,7 +6,7 @@ describe("CSS Locators",()=>{
 cy.visit("http://www.automationpractice.pl/index.php")
 //Locating the search box and Typing the search Term
 let searchTerm="Printed Chiffon Dress"
-        cy.get("#search_query_top").type(searchTerm).
+        cy.get("#search_query_top").type(searchTerm)
         
         //Clicking On The search icon after finishing the search term typing
 
