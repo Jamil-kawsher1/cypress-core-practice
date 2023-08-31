@@ -26,10 +26,26 @@ describe("Check UI elements",()=>{
 
     it("Checking Check box",()=>{
         cy.visit("https://ultimateqa.com/simple-html-elements-for-automation/")
-        cy.get("input[value='Bike']").should('be.visible').then((ele)=>{
+
+        let checkBoxBike=cy.get("input[value='Bike']");
+
+
+        checkBoxBike.should('be.visible').then((ele)=>{
             ele.click()
             
         })
+      
 
+        // Uncheking the checkbox
+        checkBoxBike.uncheck().should("not.be.checked")
+
+
+
+        // selecting  all the checkbox from vehicale section and checked them
+
+        cy.get("input[name='vehicle']").check().should("be.checked")
+
+        //unchecking all the checkbox
+        cy.get("input[name='vehicle']").uncheck().should("not.be.checked")
     })
 })
